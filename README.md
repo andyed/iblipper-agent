@@ -9,6 +9,8 @@ iBlipper allows AI agents to communicate with visual flair using animated text. 
 - **PWA Protocol**: Direct deep-linking to the iBlipper PWA.
 - **MCP Server**: Universal skill for Claude Desktop and other MCP-compliant agents.
 
+**📦 Install via skills.sh:** [skills.sh/andyed/iblipper-agent/iblipper](https://skills.sh/andyed/iblipper-agent/iblipper)
+
 ## Installation
 
 ### Via `uv` (Recommended)
