@@ -1,0 +1,16 @@
+[project]
+name = "iblipper"
+version = "0.1.0"
+description = "Kinetic typography skill and MCP server for AI agents"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=0.1.0",
+]
+
+[project.scripts]
+iblipper-server = "iblipper.server:mcp.run"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
