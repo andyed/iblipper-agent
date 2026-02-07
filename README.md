@@ -75,9 +75,11 @@ Use `render_gif_file(message="Hello", output_path="hello.gif")`.
 ## Optimization for X (Twitter)
 
 For best results when sharing on X:
-- **Format**: GIF or MP4 (looped).
-- **Size Limit**: Keep GIFs under **15MB** (web) or **5MB** (mobile).
-- **Aspect Ratio**: **1:1 (Square)** or **16:9** works best in the feed.
+- **Format**: GIF, JPG, or PNG.
+- **Size Limit**: 
+  - **Web**: Up to **15MB**
+  - **Mobile**: Up to **5MB**
+- **Aspect Ratio**: Between **1:1 (Square)** and **3:1** (wider formats work best in feed).
 - **Length**: Short loops (3-10 seconds) capture attention most effectively.
 
 *Note: iBlipper's default settings are optimized for these constraints.*

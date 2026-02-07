@@ -75,6 +75,21 @@ All parameters go in the **hash fragment** (`#param=value&param2=value2`).
 2. If both `width` and `height` are provided, they override `aspect`.
 3. If none are provided, defaults are `16:9` and 480px width.
 
+### Recommended Aspect Ratios for Platforms
+
+**Twitter/X:**
+- **Supported Range**: 1:1 (Square) to 3:1 (Wide)
+- **Recommended**: 1:1 or 16:9 for best feed display
+- **File Size Limits**:
+  - Web: 15MB max
+  - Mobile: 5MB max
+- **Example**: `aspect=1:1` for square posts, `aspect=16:9` for landscape
+
+**General Social Media:**
+- **Instagram**: 1:1 (Square) or 4:5 (Portrait)
+- **TikTok/Reels**: 9:16 (Vertical)
+- **YouTube**: 16:9 (Landscape)
+
 ## Emotion Presets (Production)
 
 | Emotion | Vibe | Best For |
