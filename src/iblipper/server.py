@@ -2,6 +2,7 @@ from mcp.server.fastmcp import FastMCP
 from iblipper.logic import generate_iblipper_url
 from iblipper.renderer import render_gif
 import os
+import os
 
 mcp = FastMCP("iblipper")
 
@@ -45,37 +46,33 @@ def generate_url(
 @mcp.tool()
 async def render_gif_file(
     message: str,
-    output_path: str,
+    output_filename: str,
     emotion: str = "emphatic",
     dark: bool = True,
-    aspect: str | None = None,
+    width: int = 480,
+    height: int = 480
 ) -> str:
     """
-    Render a GIF animation locally and save it to a file.
-    
+    Renders an iBlipper animation to a local GIF file.
     Args:
-        message: The text to animate.
-        output_path: The file path to save the GIF to (e.g., "/tmp/animation.gif").
-        emotion: Animation style.
-        dark: Dark mode.
-        aspect: Aspect ratio.
+        message: The text content
+        output_filename: The local filename to save (e.g., 'animation.gif')
+        emotion: The emotional tone
+        dark: Whether to use dark mode
+        width: Output width
+        height: Output height
+    Returns:
+        The text indicating success.
     """
-    # 1. Generate the Export URL
-    url = generate_iblipper_url(
-        message=message,
-        emotion=emotion,
-        dark=dark,
-        gif=True, # Important to trigger export mode
-        aspect=aspect
-    )
+    url = generate_iblipper_url(message, emotion=emotion, dark=dark, pwa=False, aspect="1:1") # Square for GIF
+    # Ensure export=gif is not needed in URL if we drive it via renderer script, 
+    # but let's assume valid URL
     
-    # 2. Render it
-    try:
-        saved_path = await render_gif(url, output_path)
-        return f"Successfully saved GIF to {saved_path}"
-    except Exception as e:
-        return f"Failed to render GIF: {str(e)}"
-
+    # Resolve absolute path for output
+    full_path = os.path.abspath(output_filename)
+    
+    await render_gif(url, full_path, width, height)
+    return f"GIF saved to {full_path}"
 
 if __name__ == "__main__":
     mcp.run()

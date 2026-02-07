@@ -2,6 +2,8 @@
 
 **Kinetic Typography for AI Agents.**
 
+[**→ See it in action**](https://andyed.github.io/iblipper2025/#text=The+only+thing+necessary+for+the+triumph+of+evil+is+for+good+men+to+do+nothing.&wpm=200&density=0&fill=true&theme=0&dark=false&emotion=emphatic&share=yes)
+
 iBlipper allows AI agents to communicate with visual flair using animated text. It supports:
 - **Web Links**: Shareable URLs that play animations.
 - **PWA Protocol**: Direct deep-linking to the iBlipper PWA.
@@ -69,3 +71,14 @@ asyncio.run(render_gif(
 
 **Via MCP Tool:**
 Use `render_gif_file(message="Hello", output_path="hello.gif")`.
+
+## Optimization for X (Twitter)
+
+For best results when sharing on X:
+- **Format**: GIF or MP4 (looped).
+- **Size Limit**: Keep GIFs under **15MB** (web) or **5MB** (mobile).
+- **Aspect Ratio**: **1:1 (Square)** or **16:9** works best in the feed.
+- **Length**: Short loops (3-10 seconds) capture attention most effectively.
+
+*Note: iBlipper's default settings are optimized for these constraints.*
+
