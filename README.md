@@ -12,14 +12,14 @@ iBlipper allows AI agents to communicate with visual flair using animated text. 
 ### Via `uv` (Recommended)
 
 ```bash
-uv tool install iblipper
+uv tool install iblipper-agent
 ```
 
 ### From Source
 
 ```bash
-git clone https://github.com/andyed/iblipper.git
-cd iblipper
+git clone https://github.com/andyed/iblipper-agent.git
+cd iblipper-agent
 pip install .
 ```
 

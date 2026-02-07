@@ -1,5 +1,5 @@
 [project]
-name = "iblipper"
+name = "iblipper-agent"
 version = "0.1.0"
 description = "Kinetic typography skill and MCP server for AI agents"
 readme = "README.md"
