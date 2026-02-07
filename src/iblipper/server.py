@@ -1,5 +1,7 @@
 from mcp.server.fastmcp import FastMCP
 from iblipper.logic import generate_iblipper_url
+from iblipper.renderer import render_gif
+import os
 
 mcp = FastMCP("iblipper")
 
@@ -39,6 +41,41 @@ def generate_url(
         gif=gif,
         aspect=aspect
     )
+
+@mcp.tool()
+async def render_gif_file(
+    message: str,
+    output_path: str,
+    emotion: str = "emphatic",
+    dark: bool = True,
+    aspect: str | None = None,
+) -> str:
+    """
+    Render a GIF animation locally and save it to a file.
+    
+    Args:
+        message: The text to animate.
+        output_path: The file path to save the GIF to (e.g., "/tmp/animation.gif").
+        emotion: Animation style.
+        dark: Dark mode.
+        aspect: Aspect ratio.
+    """
+    # 1. Generate the Export URL
+    url = generate_iblipper_url(
+        message=message,
+        emotion=emotion,
+        dark=dark,
+        gif=True, # Important to trigger export mode
+        aspect=aspect
+    )
+    
+    # 2. Render it
+    try:
+        saved_path = await render_gif(url, output_path)
+        return f"Successfully saved GIF to {saved_path}"
+    except Exception as e:
+        return f"Failed to render GIF: {str(e)}"
+
 
 if __name__ == "__main__":
     mcp.run()

@@ -51,3 +51,21 @@ Add to your `claude_desktop_config.json`:
   }
 }
 ```
+
+### Local GIF Generation (Owning the File)
+
+You can generate GIFs locally using the included renderer (requires Playwright).
+
+**Via Python:**
+```python
+import asyncio
+from iblipper.renderer import render_gif
+
+asyncio.run(render_gif(
+    "https://andyed.github.io/iblipper2025/?export=gif#text=Hello",
+    "output.gif"
+))
+```
+
+**Via MCP Tool:**
+Use `render_gif_file(message="Hello", output_path="hello.gif")`.

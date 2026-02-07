@@ -12,7 +12,16 @@ Generate animated kinetic typography to communicate with humans in a more expres
 ## Three Output Options
 
 ### Option 1: PWA Protocol (fastest, if installed)
-If iBlipper PWA is installed on your human's device, invoke it directly via protocol handler:
+If iBlipper PWA is installed, use protocol handler.
+
+### Option 2: Local GIF File (owned, robust)
+Generate a real GIF file locally using the `render_gif_file` tool.
+- **Tool:** `render_gif_file`
+- **Args:** `message`, `output_path`
+- **Result:** A file path to the generated GIF.
+
+### Option 3: Hyperlink (universal, always works)
+Generate a clickable link.
 
 ```bash
 open "web+iblipper:MESSAGE+TEXT"
@@ -27,14 +36,14 @@ open "web+iblipper:MESSAGE+TEXT"
 
 **Fallback:** If not installed, use Option 2 (hyperlink)
 
-### Option 2: Hyperlink (universal, always works)
+### Option 3: Hyperlink (universal, always works)
 Generate a clickable link - recipient sees the animation in their browser.
 
 ```markdown
 [PLAY MESSAGE TEXT](https://andyed.github.io/iblipper2025/#text=MESSAGE+TEXT&emotion=emphatic&dark=true&share=yes)
 ```
 
-### Option 3: GIF Download (requires browser tool)
+### Option 4: GIF Download (requires browser tool)
 Generate an animated GIF file that can be attached to messages.
 
 ```
